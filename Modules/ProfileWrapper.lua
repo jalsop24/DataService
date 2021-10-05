@@ -46,9 +46,9 @@ function ProfileWrapper:GetProfile()
 end
 
 function ProfileWrapper:Get(key)
-	assert(key ~= "_profile", "Key cannot be _profile", debug.traceback())
-	assert(key ~= "_event", "Key cannot be _event", debug.traceback())
-	assert(key ~= "Changed", "Key cannot be Changed", debug.traceback())
+	assert(key ~= "_profile", "Key cannot be _profile" .. debug.traceback())
+	assert(key ~= "_event", "Key cannot be _event" .. debug.traceback())
+	assert(key ~= "Changed", "Key cannot be Changed" .. debug.traceback())
 	if key == nil then
 		local newTab = copyTable(self._profile.Data)
 		
@@ -60,9 +60,9 @@ function ProfileWrapper:Get(key)
 end
 
 function ProfileWrapper:Set(key, value)
-	assert(key ~= "_profile", "Key cannot be _profile", debug.traceback())
-	assert(key ~= "_event", "Key cannot be _event", debug.traceback())
-	assert(key ~= "Changed", "Key cannot be Changed", debug.traceback())
+	assert(key ~= "_profile", "Key cannot be _profile" .. debug.traceback())
+	assert(key ~= "_event", "Key cannot be _event" .. debug.traceback())
+	assert(key ~= "Changed", "Key cannot be Changed" .. debug.traceback())
 	if self._profile:IsActive() then
 		self._profile.Data[key] = value
 		self._event:Fire(key, value)

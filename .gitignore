@@ -1,0 +1,7 @@
+
+# ignore .toml files
+*.toml
+
+
+/.vs/
+
