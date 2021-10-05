@@ -102,7 +102,7 @@ function DataService:InitialiseCache(player)
 			warn("no profile", player)
 		end
 		wait(0.1)
-	until (profile)
+	until profile
 
 
 	print("load finished", player, profile)
@@ -119,7 +119,7 @@ function DataService:InitialiseCache(player)
 			end	
 		end)
 
-		local activeUpdatesConnection = profile.GlobalUpdates:ListenToNewActiveUpdate(function(updateId, updateData)
+		local activeUpdatesConnection = profile.GlobalUpdates:ListenToNewActiveUpdate(function(updateId) --, updateData)
 			profile.GlobalUpdates:LockActiveUpdate(updateId)
 		end)
 
