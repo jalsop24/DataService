@@ -28,7 +28,7 @@ local KICK_MESSAGE = "Profile was released, please rejoin. If this keeps occurin
 
 -- ================================= --
 
-local ProfileService, ProfileStore, DefaultData, DataObject, ProfileWrapper, UpdateHandlers
+local ProfileService, ProfileStore, DefaultData, ProfileWrapper, UpdateHandlers  -- DataObject
 
 local DataService = {Client = {}}
 
@@ -39,7 +39,7 @@ local dataCache = {}
 local initFlags = {}
 
 
-local function notReleasedHandler(place_id, game_job_id)
+local function notReleasedHandler()--place_id, game_job_id)
 	return "ForceLoad"
 end
 
@@ -277,7 +277,7 @@ function DataService:Init()
 	ProfileWrapper = self.Modules.ProfileWrapper
 	
 	
-	DataObject = self.Shared.DataObject
+	-- DataObject = self.Shared.DataObject
 	
 	self:RegisterClientEvent(CHANGE_EVENT_NAME)
 	

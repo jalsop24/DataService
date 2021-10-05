@@ -17,7 +17,7 @@ local function copyTable(tab)
 	assert(type(tab) == "table", "First argument must be a table")
 	local tCopy = table.create(#tab)
 	for k,v in pairs(tab) do
-		if (type(v) == "table") then
+		if type(v) == "table" then
 			tCopy[k] = copyTable(v)
 		else
 			tCopy[k] = v
